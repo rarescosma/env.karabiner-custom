@@ -19,5 +19,6 @@ local k = import 'lib/karabiner.libsonnet';
       k.input(capture, ['command']),
       k.outputKey(capture, ['control']),
       k.condition('if', bundle.terminalEmulators)
-    ) for capture in ["c", "l", "d", "a", "z", "e", "r", "t"]],
+    ) for capture in ["c", "d", "a", "z", "e", "r", "t"]
+  ],
 }
