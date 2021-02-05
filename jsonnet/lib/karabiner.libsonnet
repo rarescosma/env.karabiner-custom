@@ -16,13 +16,16 @@
   //
   // condition (object, optional)
   //   condition for a trigger; use condition()
-  rule(description, input, output, condition=null):: {
+  rule(description, input, output, sec_output=null, condition=null):: {
     description: description,
     manipulators: [
       {
         from: input,
         [output.to_type]: [
           output.output,
+        ],
+        [if sec_output != null then sec_output.to_type]: [
+          sec_output.output,
         ],
         [if condition != null then 'conditions']: [
           condition,
@@ -90,4 +93,13 @@
     type: 'frontmost_application_' + type,
     bundle_identifiers: bundles,
   },
+
+  // tuple
+  //
+  // left (string, required)
+  // right (string, required)
+  tuple(left, right):: {
+    left: left,
+    right: right,
+  }
 }
