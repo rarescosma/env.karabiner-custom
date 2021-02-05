@@ -27,14 +27,14 @@ local k = import 'lib/karabiner.libsonnet';
     k.rule(
       "Right Cmd -> Opt / Backspace",
       k.input("right_command"),
-      k.outputKey("left_option"), 
-      k.outputKey("delete_or_backspace", output_type="to_if_alone") 
+      k.outputKey("left_option"),
+      k.outputKey("delete_or_backspace", output_type="to_if_alone")
     ),
     k.rule(
       "Caps -> Cmd / Escape",
       k.input("caps_lock"),
-      k.outputKey("left_command"), 
-      k.outputKey("escape", output_type="to_if_alone") 
+      k.outputKey("left_command"),
+      k.outputKey("escape", output_type="to_if_alone")
     )
   ] + [
     k.rule(
@@ -50,9 +50,9 @@ local k = import 'lib/karabiner.libsonnet';
       k.outputKey(_.right),
       condition=k.condition('unless', bundle.terminalEmulators)
     ) for _ in [
-      k.tuple("h", "left_arrow"), 
-      k.tuple("j", "down_arrow"), 
-      k.tuple("k", "up_arrow"), 
+      k.tuple("h", "left_arrow"),
+      k.tuple("j", "down_arrow"),
+      k.tuple("k", "up_arrow"),
       k.tuple("l", "right_arrow")
     ]
   ]
