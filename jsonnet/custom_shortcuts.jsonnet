@@ -45,6 +45,13 @@ local k = import 'lib/karabiner.libsonnet';
     ) for capture in ["c", "d", "a", "z", "e", "r", "t"]
   ] + [
     k.rule(
+      "opt + " + index + " to cmd + " + index,
+      k.input(index, ['option']),
+      k.outputKey(index, ['command']),
+      condition=k.condition('if', bundle.webBrowsers)
+    ) for index in ["1", "2", "3", "4", "5", "6", "7", "8", "9"]
+  ] + [
+    k.rule(
       "Opt + " + _.left + " -> " + _.right,
       k.input(_.left, ['option']),
       k.outputKey(_.right),

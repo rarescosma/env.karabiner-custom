@@ -35,7 +35,7 @@
   // bundle identifiers for web browser applications
   webBrowsers: [
     '^org\\.mozilla\\.firefox$',
-    '^com\\.google\\.chrome$',
+    '^com\\.google\\.Chrome$',
   ],
 
   // since this combination is used so much, it's given its own identifier
