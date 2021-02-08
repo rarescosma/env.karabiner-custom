@@ -4,31 +4,69 @@ local k = import 'lib/karabiner.libsonnet';
 {
   title: "Custom Shortcuts",
   rules: [
+    // ========= External ==========
+    k.rule(
+      "Left Cmd -> Ctrl (external)",
+      k.input("left_command"),
+      k.outputKey("left_control"),
+      condition=k.vendor(bundle.external_keyboards)
+    ),
+    k.rule(
+      "Left Ctrl -> Cmd (external)",
+      k.input("left_control"),
+      k.outputKey("left_command"),
+      condition=k.vendor(bundle.external_keyboards)
+    ),
+    k.rule(
+      "Right Opt -> Backspace (external)",
+      k.input("right_option"),
+      k.outputKey("right_option"),
+      k.outputKey("delete_or_backspace", output_type="to_if_alone"),
+      condition=k.vendor(bundle.external_keyboards)
+    ),
+    k.rule(
+      "Right Cmd -> Ctrl (external)",
+      k.input("right_command"),
+      k.outputKey("right_control"),
+      condition=k.vendor(bundle.external_keyboards)
+    ),
+    k.rule(
+      "Right Ctrl -> Cmd (external)",
+      k.input("right_control"),
+      k.outputKey("right_command"),
+      condition=k.vendor(bundle.external_keyboards)
+    ),
+    // ========= Builtin ===========
     k.rule(
       "Left Cmd -> Opt",
       k.input("left_command"),
-      k.outputKey("left_option")
+      k.outputKey("left_option"),
+      condition=k.vendor(bundle.internal_keyboards)
     ),
     k.rule(
       "Left Opt -> Ctrl",
       k.input("left_option"),
-      k.outputKey("left_control")
+      k.outputKey("left_control"),
+      condition=k.vendor(bundle.internal_keyboards)
     ),
     k.rule(
       "Left Ctrl -> Cmd",
       k.input("left_control"),
-      k.outputKey("left_command")
+      k.outputKey("left_command"),
+      condition=k.vendor(bundle.internal_keyboards)
     ),
     k.rule(
       "Right Opt -> Cmd",
       k.input("right_option"),
-      k.outputKey("right_command")
+      k.outputKey("right_command"),
+      condition=k.vendor(bundle.internal_keyboards)
     ),
     k.rule(
       "Right Cmd -> Opt / Backspace",
       k.input("right_command"),
       k.outputKey("left_option"),
-      k.outputKey("delete_or_backspace", output_type="to_if_alone")
+      k.outputKey("delete_or_backspace", output_type="to_if_alone"),
+      condition=k.vendor(bundle.internal_keyboards)
     ),
     k.rule(
       "Caps -> Cmd / Escape",
