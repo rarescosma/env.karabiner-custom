@@ -73,7 +73,13 @@ local k = import 'lib/karabiner.libsonnet';
       k.input("caps_lock"),
       k.outputKey("left_command"),
       k.outputKey("escape", output_type="to_if_alone")
-    )
+    ),
+    k.rule(
+      "Cmd + Q -> Quick Docu",
+      k.input("q", ['command']),
+      k.outputKey("q", ['control', 'shift']),
+      condition=k.condition('if', bundle.ides)
+    ),
   ] + [
     k.rule(
       "cmd + " + capture + " to ctrl + " + capture,
