@@ -1,7 +1,13 @@
 {
-  //--------------------//
-  // BUNDLE IDENTIFIERS //
-  //--------------------//
+  // external device vendors
+  external_keyboards : [
+    {vendor_id: 1241}
+  ],
+
+  // internal device vendors
+  internal_keyboards: [
+    {vendor_id: 1452}
+  ],
 
   // bundle identifiers for hypervisor applications
   hypervisors: [

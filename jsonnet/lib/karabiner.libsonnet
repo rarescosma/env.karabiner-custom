@@ -94,6 +94,15 @@
     bundle_identifiers: bundles,
   },
 
+  // vendor
+  //
+  // bundles (array, required)
+  //   bundle identifiers of devices
+  vendor(bundles):: {
+    type: 'device_if',
+    identifiers: bundles,
+  },
+
   // tuple
   //
   // left (string, required)
