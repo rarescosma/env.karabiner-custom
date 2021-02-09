@@ -43,6 +43,7 @@
   webBrowsers: [
     '^org\\.mozilla\\.firefox$',
     '^com\\.google\\.Chrome$',
+    '^com\\.brave\\.Browser$',
   ],
 
   // since this combination is used so much, it's given its own identifier
