@@ -80,6 +80,12 @@ local k = import 'lib/karabiner.libsonnet';
       k.outputKey("q", ['control', 'shift']),
       condition=k.condition('if', bundle.ides)
     ),
+    k.rule(
+      "Cmd + J -> Downloads",
+      k.input("j", ['command']),
+      k.outputKey("l", ['option', 'command']),
+      condition=k.condition('if', bundle.webBrowsers)
+    ),
   ] + [
     k.rule(
       "cmd + " + capture + " to ctrl + " + capture,
