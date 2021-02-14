@@ -71,6 +71,17 @@
     },
   },
 
+  // outputButton
+  //
+  // button (string, required)
+  //   the button to "click"
+  outputButton(button):: {
+    to_type: 'to',
+    output: {
+      pointing_button: button,
+    },
+  },
+
   // outputShell
   //
   // command (string, required)

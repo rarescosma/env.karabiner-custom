@@ -86,6 +86,11 @@ local k = import 'lib/karabiner.libsonnet';
       k.outputKey("l", ['option', 'command']),
       condition=k.condition('if', bundle.webBrowsers)
     ),
+    k.rule(
+      "Alt + . -> Right Click",
+      k.input("period", ['option']),
+      k.outputButton("button2")
+    ),
   ] + [
     k.rule(
       "cmd + " + capture + " to ctrl + " + capture,
