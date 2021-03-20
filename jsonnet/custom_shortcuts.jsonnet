@@ -36,6 +36,18 @@ local k = import 'lib/karabiner.libsonnet';
       k.outputKey("right_command"),
       condition=k.vendor(bundle.external_keyboards)
     ),
+    k.rule(
+      "Home to Cmd + Left",
+      k.input("home"),
+      k.outputKey("left_arrow", ["command"]),
+      condition=k.vendor(bundle.external_keyboards)
+    ),
+    k.rule(
+      "End to Cmd + Right",
+      k.input("end"),
+      k.outputKey("right_arrow", ["command"]),
+      condition=k.vendor(bundle.external_keyboards)
+    ),
     // ========= Builtin ===========
     k.rule(
       "Left Cmd -> Opt",
