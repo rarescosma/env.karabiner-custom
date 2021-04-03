@@ -1,7 +1,8 @@
 {
   // external device vendors
   external_keyboards : [
-    {vendor_id: 1241}
+    {vendor_id: 1241},
+    {vendor_id: 1267}
   ],
 
   // internal device vendors
