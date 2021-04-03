@@ -1,3 +1,10 @@
+local ensureList(thing) = (
+    if std.isArray(thing) then
+        thing
+    else
+        [thing]
+);
+
 {
   //-----------//
   // FUNCTIONS //
@@ -27,9 +34,7 @@
         [if sec_output != null then sec_output.to_type]: [
           sec_output.output,
         ],
-        [if condition != null then 'conditions']: [
-          condition,
-        ],
+        [if condition != null then 'conditions']: ensureList(condition),
         type: 'basic',
       },
     ],
