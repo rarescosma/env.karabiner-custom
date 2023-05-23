@@ -7,7 +7,7 @@
 
   // internal device vendors
   internal_keyboards: [
-    {vendor_id: 1452}
+    {is_built_in_keyboard: true}
   ],
 
   // bundle identifiers for hypervisor applications
