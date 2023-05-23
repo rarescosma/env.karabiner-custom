@@ -24,15 +24,9 @@ local k = import 'lib/karabiner.libsonnet';
       condition=k.vendor(bundle.internal_keyboards)
     ),
     k.rule(
-      "Left Opt -> Ctrl",
+      "Left Opt -> Fn",
       k.input("left_option"),
-      k.outputKey("left_control"),
-      condition=k.vendor(bundle.internal_keyboards)
-    ),
-    k.rule(
-      "Left Ctrl -> Cmd",
-      k.input("left_control"),
-      k.outputKey("left_command"),
+      k.outputKey("fn"),
       condition=k.vendor(bundle.internal_keyboards)
     ),
     k.rule(
