@@ -77,7 +77,7 @@ local k = import 'lib/karabiner.libsonnet';
       k.input(capture, ['command']),
       k.outputKey(capture, ['control']),
       condition=k.condition('if', bundle.terminalEmulators)
-    ) for capture in ["c", "d", "a", "z", "e", "r", "t"]
+    ) for capture in ["c", "d", "a", "z", "e", "r", "t", "b"]
   ] + [
     k.rule(
       "opt + " + index + " to cmd + " + index,
