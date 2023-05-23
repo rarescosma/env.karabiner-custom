@@ -37,7 +37,7 @@
     '^com\\.apple\\.Terminal$',
     '^com\\.googlecode\\.iterm2$',
     '^co\\.zeit\\.hyper$',
-    '^io\\.alacritty$',
+    '^org\\.alacritty$',
   ],
 
   // bundle identifiers for web browser applications
