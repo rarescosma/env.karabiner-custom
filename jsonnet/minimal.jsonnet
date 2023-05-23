@@ -43,10 +43,18 @@ local k = import 'lib/karabiner.libsonnet';
       condition=k.vendor(bundle.internal_keyboards)
     ),
     k.rule(
-      "Caps -> Cmd / Escape",
+      "Caps -> Cmd / Escape (non-IDE)",
       k.input("caps_lock"),
       k.outputKey("left_command"),
-      k.outputKey("escape", output_type="to_if_alone")
+      k.outputKey("escape", output_type="to_if_alone"),
+      condition=k.condition('unless', bundle.ides)
+    ),
+    k.rule(
+      "Caps -> Ctrl / Escape (IDE)",
+      k.input("caps_lock"),
+      k.outputKey("left_control"),
+      k.outputKey("escape", output_type="to_if_alone"),
+      condition=k.condition('if', bundle.ides)
     ),
     k.rule(
       "Cmd + Q -> Quick Docu",
