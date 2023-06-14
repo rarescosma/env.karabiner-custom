@@ -73,6 +73,11 @@ local k = import 'lib/karabiner.libsonnet';
       k.input("period", ['option']),
       k.outputButton("button2")
     ),
+    k.rule(
+      "Fn + V -> Super + V",
+      k.input("v", ['fn']),
+      k.outputKey("v", ["option", "command", "control"])
+    ),
   ] + [
     k.rule(
       "cmd + " + capture + " to ctrl + " + capture,
