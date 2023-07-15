@@ -78,6 +78,18 @@ local k = import 'lib/karabiner.libsonnet';
       k.input("v", ['fn']),
       k.outputKey("v", ["option", "command", "control"])
     ),
+    k.rule(
+      "F -> Cmd + f (VLC)",
+      k.input("f"),
+      k.outputKey("f", ["command"]),
+      condition=k.condition('if', bundle.vlcPlayer)
+    ),
+    k.rule(
+      "V -> s (VLC)",
+      k.input("v"),
+      k.outputKey("s"),
+      condition=k.condition('if', bundle.vlcPlayer)
+    )
   ] + [
     k.rule(
       "cmd + " + capture + " to ctrl + " + capture,

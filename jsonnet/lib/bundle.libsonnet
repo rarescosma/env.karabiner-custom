@@ -47,6 +47,8 @@
     '^com\\.brave\\.Browser$',
   ],
 
+  vlcPlayer: [ '^org\\.videolan\\.vlc$' ],
+
   // since this combination is used so much, it's given its own identifier
   standard:
     $.terminalEmulators +
